@@ -1,3 +1,11 @@
+:root {
+    --dark-blue-color: #132043;
+    --blue-color: #1f4172;
+    --pink-color: #f1b4bb;
+    --dark-pink-color: #a62a47;
+    --lightpink-color: #fdf0f0;
+}
+
 *,
 *::before,
 *::after {
@@ -7,7 +15,90 @@
 }
 
 body {
-    background-color: rgb(20, 20, 20);
-    color: hsl(0, 0%, 73%);
+    background-color: var(--lightpink-color);
+    color: var(--dark-blue-color);
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.title {
+    text-align: center;
+    margin-top: 50px;
+    color: var(--pink-color);
+    font-size: 900;
+}
+
+span {
+    color: var(--blue-color);
+}
+.container {
+    width: 80%;
+    max-width: 700px;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#input {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: darkblue;
+    color: var(--lightpink-color);
+    border: 1px solid var(--dark-blue-color);
+}
+
+.list {
+    margin-top: 20px;
+}
+
+.todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid var(--pink-color);
+    margin-bottom: 10px;
+}
+
+.item {
+    flex-grow: 1;
+    margin: 0;
+}
+
+.btn-container {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox {
+    margin-right: 10px;
+}
+
+.delete-btn {
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border: 2px solid var(--dark-pink-color);
+    color: var(--dark-pink-color);
+    background-color: var(--lightpink-color);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.error {
+    color: var(--dark-pink-color);
+    text-align: center;
+    margin-top: -15px;
 }

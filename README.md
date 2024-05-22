@@ -1,33 +1,32 @@
-# Image gallery
+# Todo List
 
-> A simple website ...
+> A simple website where user can add, check and delete items.
 
 ## Table of contents
 
-- [Image gallery](#image-gallery)
-	- [Table of contents](#table-of-contents)
-	- [General info](#general-info)
-	- [Screenshots](#screenshots)
-	- [Technologies](#technologies)
-	- [Setup](#setup)
-	- [Code Examples](#code-examples)
-	- [Status](#status)
+- [Todo List](#todo-list)
+  - [Table of contents](#table-of-contents)
+  - [General info](#general-info)
+  - [Screenshots](#screenshots)
+  - [Technologies](#technologies)
+  - [Setup](#setup)
+  - [Code Examples](#code-examples)
+  - [Status](#status)
 
 ## General info
 
-> The objective of the project is to practice separation of concern in
-> JavaScript.
+> CRUD operation on todo list fetched from server.
 
 ## Screenshots
 
-![Example screenshot]()
+![Example screenshot](./assets/screenshot.png)
 
 ## Technologies
 
 - JavaScript
 - HTML5
 - CSS3
-- VSC code
+- VS Code
 
 ## Setup
 
@@ -36,10 +35,25 @@ Clone the repo and run npm install.
 ## Code Examples
 
 ```js
+const deleteTodo = async (id) => {
+	try {
+		const res = await fetch(`http://localhost:3000/todos/${id}`, {
+			method: 'DELETE',
+		});
+		if (!res.ok) {
+			throw new Error(
+				`Failed to delete todo. The response status: ${res.status}`,
+			);
+		}
+		return await res.json();
+	} catch (err) {
+		console.error(err);
+	}
+};
 
+export default deleteTodo;
 ```
 
 ## Status
 
-Project is: _in progress_
-# jokes-api
+Project is: _done_
